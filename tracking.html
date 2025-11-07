@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tracking Pengiriman</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Toko Buku</div>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+
+  <div class="container">
+    <h1>Tracking Pengiriman</h1>
+    <div class="tracking-form">
+      <input type="text" id="noDO" placeholder="Nomor Delivery Order" />
+      <button onclick="cariTracking()">Cari</button>
+    </div>
+
+    <div id="hasilTracking" style="display:none; margin-top: 30px;">
+      <h2>Hasil Tracking</h2>
+      <p><strong>Nama Pemesan:</strong> <span id="namaHasil"></span></p>
+      <p><strong>Status:</strong> <span id="statusHasil"></span></p>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+      <table class="detail-table">
+        <tr><td>Ekspedisi</td><td id="ekspedisiHasil"></td></tr>
+        <tr><td>Tanggal Kirim</td><td id="tanggalHasil"></td></tr>
+        <tr><td>Jenis Paket</td><td id="paketHasil"></td></tr>
+        <tr><td>Total Pembayaran</td><td id="totalHasil"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
