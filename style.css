@@ -1,0 +1,162 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #f0f7fa; color: #333; line-height: 1.6; }
+
+.navbar {
+  background: #2c3e50; color: white; padding: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.navbar .logo { font-size: 1.5rem; font-weight: bold; }
+.logout { color: #e74c3c; text-decoration: none; }
+
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+h1, h2, h3 { color: #2c3e50; }
+
+.login-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.login-container {
+  background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%; max-width: 400px;
+}
+.login-container input, .login-container button {
+  width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;
+}
+.login-container button {
+  background: #3498db; color: white; border: none; cursor: pointer; font-size: 1.1rem;
+}
+.login-container button:hover { background: #2980b9; }
+.links { text-align: center; margin-top: 15px; }
+
+.menu-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;
+}
+.menu-card {
+  background: white; padding: 2rem; text-align: center; border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; color: #2c3e50; font-weight: bold;
+  transition: 0.3s;
+}
+.menu-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+
+table {
+  width: 100%; border-collapse: collapse; margin-top: 20px; background: white;
+}
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background: #3498db; color: white; }
+tr:hover { background: #f1f1f1; }
+
+.add-form, .tracking-form {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;
+}
+.add-form input, .tracking-form input { padding: 10px; border: 1px solid #ddd; border-radius: 8px; flex: 1; min-width: 150px; }
+.add-form button, .tracking-form button {
+  padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer;
+}
+.add-form button:hover, .tracking-form button:hover { background: #219653; }
+
+.modal {
+  display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); justify-content: center; align-items: center;
+}
+.modal-content {
+  background: white; padding: 2rem; border-radius: 12px; width: 90%; max-width: 500px; position: relative;
+  animation: fadeIn 0.3s;
+}
+.close { position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; }
+
+.progress-bar {
+  width: 100%; background: #ddd; height: 20px; border-radius: 10px; overflow: hidden; margin: 15px 0;
+}
+#progressFill { height: 100%; width: 0; background: #27ae60; transition: width 1s; }
+
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+@media (max-width: 768px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .add-form, .tracking-form { flex-direction: column; }
+}
+#katalogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.book-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.book-card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.beli-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.beli-btn:disabled {
+  background: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.cart-btn {
+  background: #e74c3c;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cart-btn:hover {
+  background: #c0392b;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: zoomIn 0.4s;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+}
+.close:hover { color: #000; }
