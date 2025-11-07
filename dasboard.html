@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Toko Buku</div>
+    <div class="greeting" id="greeting"></div>
+    <a href="index.html" class="logout">Logout</a>
+  </nav>
+
+  <div class="container">
+    <h1>Dashboard</h1>
+    <div class="menu-grid">
+      <a href="stok.html" class="menu-card">Informasi Stok / Katalog</a>
+      <a href="checkout.html" class="menu-card">Laporan Pemesanan</a>
+      <a href="tracking.html" class="menu-card">Tracking Pengiriman</a>
+      <a href="#" class="menu-card" onclick="showHistory()">History Transaksi</a>
+    </div>
+
+    <div id="historyTable" style="display:none; margin-top: 30px;">
+      <h2>History Transaksi</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th><th>Tanggal</th><th>Nama</th><th>Buku</th><th>Jumlah</th><th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
